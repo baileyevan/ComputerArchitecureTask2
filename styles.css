@@ -1,0 +1,11 @@
+.invalid {
+    border: 2px solid red;
+}
+
+table {
+    width: 50vh;
+}
+
+table input {
+    float: right;
+}
