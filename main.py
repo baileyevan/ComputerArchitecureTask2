@@ -1,4 +1,8 @@
-import json
+from kmapFunctions import printKmap
+from kmapFunctions import buildKmap
+from groupingFunctions import findGroups
+from groupingFunctions import groupToTerm
+
 
 def printTruthTable(n, outputs):
     variables = [chr(65+i) for i in range(n)]
@@ -105,6 +109,38 @@ def main():
     print(json.dumps(result, indent=2))
     
     """
+    
+    kmap, rows, cols = buildKmap(n, outputs)
+    printKmap(kmap, rows, cols)
+    
+    groups = findGroups(kmap, form)
+    
+    covered = set()
+    terms = []
+    
+    groups.sort(key=len, reverse=True)
+    
+    for g in groups:
+        # check if group covers any cells
+        newCells = [cell for cell in g if cell not in covered]
+        
+        if not newCells:
+            continue
+            
+        term = groupToTerm(g, rows, cols, n, form=form)
+        
+        if term:
+            terms.append(term)
+            covered.update(g)
+    
+            
+    if form == "SOP":
+        simplified = " + ".join(terms)
+    else:
+        simplified = "".join(terms)
+    
+    print("\nSimplified Equation: ")
+    print(simplified)
 
 
 
