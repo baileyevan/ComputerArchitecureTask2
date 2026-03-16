@@ -7,7 +7,7 @@ This project is a Boolean expression simplifier designed as part of a Computer A
   -Display the Karnaugh Map (K-map) for 2–4 variables
   -Simplify the Boolean expression using K-map grouping
   -Validate the simplified expression against the original truth table
-```
+
   ## Features
   Truth Table Input:
     -From a .txt file or automatically generated random truth table
@@ -28,7 +28,7 @@ This project is a Boolean expression simplifier designed as part of a Computer A
     -Compares against original truth table to ensure correctness
 
 ## File Structure
-```
+
 ProcessorDesignTask2/
 │
 ├─ main.py                     # Main program file
@@ -37,12 +37,12 @@ ProcessorDesignTask2/
 ├─ validationFunctions.py      # Functions to validate simplified expressions
 ├─ truthTable.txt              # Sample truth table file
 └─ README.md                   # This file
-```
+
 
 ## Usage
   python .\main.py
 
-```
+
 Truth Table as Input
   truthTable.txt:
     00001111
@@ -61,7 +61,7 @@ Truth Table as Input
       1 | 0 | 1 | 1
       1 | 1 | 0 | 1
       1 | 1 | 1 | 1
-```
+
 
 Program Flow:
   1. Enter the number of variables (n ≥ 2).
@@ -73,3 +73,5 @@ Program Flow:
     -Karnaugh Map
     -Simplified Boolean Expression
     -Validation result
+
+```
