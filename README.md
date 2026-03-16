@@ -40,7 +40,7 @@ ProcessorDesignTask2/
 ```
 
 ## Usage
-  python main.py
+  python .\main.py
 
 ```
 Truth Table as Input
