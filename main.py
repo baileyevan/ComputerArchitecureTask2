@@ -2,7 +2,14 @@ from kmapFunctions import printKmap
 from kmapFunctions import buildKmap
 from groupingFunctions import findGroups
 from groupingFunctions import groupToTerm
+from validationFunctions import validateSimplifiedExpression
 
+import random
+
+def generateRandomTruthTable(n):
+    rows = 2 ** n
+    outputs = "".join(random.choice("01") for _ in range(rows))
+    return outputs
 
 def printTruthTable(n, outputs):
     variables = [chr(65+i) for i in range(n)]
@@ -76,9 +83,14 @@ def main():
     while form not in ("SOP", "POS"):
         form = input("Enter form (SOP or POS): ").upper()
 
-    filename = "truthTable.txt"
-    with open(filename, "r") as file:
-        outputs = file.read().replace(" ", "").replace("\n", "")
+    choice = input("Use a random truth table instead of reading from file? (y/n): ").lower()
+    if choice == "y":
+        outputs = generateRandomTruthTable(n)
+        print("Random Outputs:", outputs)
+    else:
+        filename = "truthTable.txt"
+        with open(filename, "r") as file:
+            outputs = file.read().replace(" ", "").replace("\n", "")
 
     expectedVariables = 2 ** n
 
@@ -141,6 +153,13 @@ def main():
     
     print("\nSimplified Equation: ")
     print(simplified)
+    print("\n")
+    
+    #validate
+    if validateSimplifiedExpression(n, simplified, outputs, form):
+        print("\nValidation: !!!Simplified expression matches truth table!!!")
+    else:
+        print("\nValidation: Simplified expression does not match the truth table...")
 
 
 
