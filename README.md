@@ -1,5 +1,5 @@
 # Processor Design Task 2
-
+```
 ## Overview
 This project is a Boolean expression simplifier designed as part of a Computer Architecture / Processor Design course assignment. It allows users to:
   -Input a truth table (from a file or generate randomly)
@@ -7,7 +7,7 @@ This project is a Boolean expression simplifier designed as part of a Computer A
   -Display the Karnaugh Map (K-map) for 2–4 variables
   -Simplify the Boolean expression using K-map grouping
   -Validate the simplified expression against the original truth table
-
+```
   ## Features
   Truth Table Input:
     -From a .txt file or automatically generated random truth table
