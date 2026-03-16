@@ -1,6 +1,6 @@
 # Processor Design Task 2
 ```
-## Overview
+Overview
 This project is a Boolean expression simplifier designed as part of a Computer Architecture / Processor Design course assignment. It allows users to:
   -Input a truth table (from a file or generate randomly)
   -Automatically generate the canonical Boolean expression (SOP or POS)
@@ -8,7 +8,7 @@ This project is a Boolean expression simplifier designed as part of a Computer A
   -Simplify the Boolean expression using K-map grouping
   -Validate the simplified expression against the original truth table
 
-  ## Features
+  Features
   Truth Table Input:
     -From a .txt file or automatically generated random truth table
   
@@ -27,7 +27,7 @@ This project is a Boolean expression simplifier designed as part of a Computer A
     -Evaluates simplified expression for all input combinations
     -Compares against original truth table to ensure correctness
 
-## File Structure
+File Structure
 
 ProcessorDesignTask2/
 │
@@ -39,7 +39,7 @@ ProcessorDesignTask2/
 └─ README.md                   # This file
 
 
-## Usage
+Usage
   python .\main.py
 
 
