@@ -75,9 +75,14 @@ def groupToTerm(group, rowLabels, colLabels, n, form="SOP"):
         #check each varibale position
         for i in range(n):
             #get all the bits for this variable across the group
+            #this tells us if the variables stay the same accross the group
             bits = {b[i] for b in binaries}
+            
             #if all the bits are the same this variable is part of the term
+            #keep only variables that dont change
             if len(bits) == 1:
+                
+                #build the term
                 if "1" in bits:
                     # variable stays normal
                     term += variables[i]
